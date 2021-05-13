@@ -1,0 +1,4 @@
+{
+    "python.pythonPath": "/home/viveky/anaconda3/envs/ML/bin/python",
+    "python.analysis.extraPaths": ["./project_1"]
+}
