@@ -1,21 +1,33 @@
 import matplotlib.pyplot as plt
 import matplotlib
 import MLE
+import kNN
 from tqdm import tqdm
 import numpy as np
 
 matplotlib.use('Agg')
 
-meanacc = 0
-MLEacc = np.zeros(100)
-for i in tqdm(range(100)):
-    MLEacc[i] = MLE.runMLE()
-    meanacc = meanacc + MLEacc[i]
-meanacc = meanacc/100
-print(meanacc)
+runs = 20
 
-x = np.arange(100)
-plt.plot(x, MLEacc)
+meanMLEacc = 0
+meanKNNacc = 0
+MLEacc = np.zeros(runs)
+KNNacc = np.zeros(runs)
+for i in tqdm(range(runs)):
+    MLEacc[i] = MLE.runMLE()
+    KNNacc[i] = kNN.runKNN(4)
+    meanMLEacc = meanMLEacc + MLEacc[i]
+    meanKNNacc = meanKNNacc + KNNacc[i]
+meanMLEacc = meanMLEacc/runs
+meanKNNacc = meanKNNacc/runs
+
+print("Average MLE Accuracy: ", meanMLEacc)
+print("Average kNN Accuracy: ", meanKNNacc)
+
+x = np.arange(runs)
+plt.plot(x, MLEacc, label='MLE')
+plt.plot(x, KNNacc, label='kNN')
 plt.ylabel('Accuracy')
 plt.title("MLE Accuracies")
-plt.savefig('MLE_Stats.png')
+plt.legend()
+plt.savefig('Stats.png')

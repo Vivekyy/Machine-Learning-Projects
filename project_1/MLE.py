@@ -1,7 +1,6 @@
-import math
 import numpy as np
-from scipy import stats
 from tqdm import tqdm
+from scipy import stats
 from utils import getData
 
 #Estimate class priors
@@ -99,7 +98,7 @@ def runMLE():
     acc = 0
 
     Probs = np.zeros((10,len(Xtest)))
-    for j in range(10):
+    for j in tqdm(range(10), leave=False, desc='MLE'):
         #Fix for non-invertible matrices
         A = covs[j]
         A = A + .01*np.identity(np.shape(covs[j])[0])
