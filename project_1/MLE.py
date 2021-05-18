@@ -54,7 +54,7 @@ def getPriors(Y):
 def getConditionals(X,Y):
     means = np.zeros((10, np.shape(X[1])[0]))
     covs = np.zeros((10,np.shape(X[1])[0],np.shape(X[1])[0]))
-    for i in range(10):
+    for i in tqdm(range(10), leave=False, desc='MLE'):
         means[i], covs[i] = kConditional(X,Y,i)
     
     return means, covs
@@ -87,10 +87,10 @@ def kConditional(X,Y,k):
 def runMLE():
     #Train on 8000, test on 2000
     X, Y = getData()
-    Xtrain = X[:7000]
-    Ytrain = Y[:7000]
-    Xtest = X[7000:]
-    Ytest = Y[7000:]
+    Xtrain = X[:8000]
+    Ytrain = Y[:8000]
+    Xtest = X[8000:]
+    Ytest = Y[8000:]
 
     means, covs = getConditionals(Xtrain,Ytrain)
     priors = getPriors(Ytrain)
@@ -98,7 +98,7 @@ def runMLE():
     acc = 0
 
     Probs = np.zeros((10,len(Xtest)))
-    for j in tqdm(range(10), leave=False, desc='MLE'):
+    for j in range(10):
         #Fix for non-invertible matrices
         A = covs[j]
         A = A + .01*np.identity(np.shape(covs[j])[0])

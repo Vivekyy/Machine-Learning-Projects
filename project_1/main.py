@@ -11,11 +11,13 @@ runs = 20
 
 meanMLEacc = 0
 meanKNNacc = 0
+
 MLEacc = np.zeros(runs)
 KNNacc = np.zeros(runs)
+
 for i in tqdm(range(runs)):
     MLEacc[i] = MLE.runMLE()
-    KNNacc[i] = kNN.runKNN(4)
+    KNNacc[i] = kNN.runKNN(3)
     meanMLEacc = meanMLEacc + MLEacc[i]
     meanKNNacc = meanKNNacc + KNNacc[i]
 meanMLEacc = meanMLEacc/runs
@@ -28,6 +30,6 @@ x = np.arange(runs)
 plt.plot(x, MLEacc, label='MLE')
 plt.plot(x, KNNacc, label='kNN')
 plt.ylabel('Accuracy')
-plt.title("MLE Accuracies")
+plt.title("MLE vs KNN Accuracy")
 plt.legend()
 plt.savefig('Stats.png')
