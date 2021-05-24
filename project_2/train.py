@@ -32,9 +32,12 @@ def train(dataset, C=1.0, gamma='scale', kernel='rbf', plotname='Temp'):
 
     plt.scatter(Xbound[:,0], Xbound[:,1], c=Ybound)
     plt.title(plotname)
+    plt.xlabel("Accuracy: "+str(accuracy))
+    
     plt.savefig(plotname+'.png')
-
+    
     return accuracy
 
 if __name__=="__main__":
-    train('moons_dataset.csv')
+    accuracy = train('rolls_dataset.csv')
+    print("Test Accuracy: ", accuracy)
