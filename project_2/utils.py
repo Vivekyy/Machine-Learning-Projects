@@ -23,9 +23,6 @@ def getDigits():
     X = data['X']
     Y = data['Y']
 
-    #normalize X data
-    X = preprocessing.normalize(X, norm='max', axis=1)
-
     #shuffle indices
     shuffler = np.random.permutation(len(X))
     X = X[shuffler]
