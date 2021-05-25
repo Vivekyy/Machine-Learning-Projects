@@ -1,4 +1,3 @@
-from termios import CR2
 from train import train2
 import numpy as np
 from tqdm import tqdm

@@ -39,12 +39,13 @@ def train(dataset, C=1.0, gamma='scale', kernel='rbf', plotpath='Temp'):
     plt.xlabel("Accuracy: "+str(accuracy))
 
     plt.savefig(plotpath+'.png')
+    plt.clf()
     
     return accuracy, trainacc
 
-def train2(C=1.0, gamma='scale', kernel='rbf', scheme='ovo'):
+def train2(C=1.0, gamma='scale', kernel='rbf', scheme='ovo', n=None):
 
-    X,Y = getDigits()
+    X,Y = getDigits(n)
 
     Xtrain = X[:7000]
     Ytrain = Y[:7000]
@@ -65,5 +66,5 @@ def train2(C=1.0, gamma='scale', kernel='rbf', scheme='ovo'):
     return accuracy
 
 if __name__=="__main__":
-    accuracy = train(C=.4, kernel='linear')
-    print("Test Accuracy: ", accuracy)
+    accuracy = train('rolls_dataset.csv', C=10, gamma=10)
+    print("Train/Test Accuracy: ", accuracy)

@@ -1,0 +1,416 @@
+linear
+
+[0.5 0.5]
+Moons Train Accuracy: 0.8775714285714286 
+Moons Test Accuracy: 0.8753333333333333 
+Possible Overfit 
+
+Rolls Train Accuracy: 0.5394285714285715 
+Rolls Test Accuracy: 0.545 
+
+
+[1.  0.5]
+Moons Train Accuracy: 0.8748571428571429 
+Moons Test Accuracy: 0.882 
+
+Rolls Train Accuracy: 0.5398571428571428 
+Rolls Test Accuracy: 0.544 
+
+
+[5.  0.5]
+Moons Train Accuracy: 0.8805714285714286 
+Moons Test Accuracy: 0.8716666666666667 
+Possible Overfit 
+
+Rolls Train Accuracy: 0.5412857142857143 
+Rolls Test Accuracy: 0.5413333333333333 
+
+
+[0.5 1. ]
+Moons Train Accuracy: 0.8772857142857143 
+Moons Test Accuracy: 0.8766666666666667 
+Possible Overfit 
+
+Rolls Train Accuracy: 0.5384285714285715 
+Rolls Test Accuracy: 0.5506666666666666 
+
+
+[1. 1.]
+Moons Train Accuracy: 0.8745714285714286 
+Moons Test Accuracy: 0.8836666666666667 
+
+Rolls Train Accuracy: 0.5415714285714286 
+Rolls Test Accuracy: 0.5406666666666666 
+Possible Overfit 
+
+
+[5. 1.]
+Moons Train Accuracy: 0.8744285714285714 
+Moons Test Accuracy: 0.8843333333333333 
+
+Rolls Train Accuracy: 0.5412857142857143 
+Rolls Test Accuracy: 0.541 
+Possible Overfit 
+
+
+[0.5 5. ]
+Moons Train Accuracy: 0.8734285714285714 
+Moons Test Accuracy: 0.8873333333333333 
+
+Rolls Train Accuracy: 0.5467142857142857 
+Rolls Test Accuracy: 0.533 
+Possible Overfit 
+
+
+[1. 5.]
+Moons Train Accuracy: 0.8768571428571429 
+Moons Test Accuracy: 0.8766666666666667 
+Possible Overfit 
+
+Rolls Train Accuracy: 0.5464285714285714 
+Rolls Test Accuracy: 0.537 
+Possible Overfit 
+
+
+[5. 5.]
+Moons Train Accuracy: 0.8794285714285714 
+Moons Test Accuracy: 0.8713333333333333 
+Possible Overfit 
+
+Rolls Train Accuracy: 0.5457142857142857 
+Rolls Test Accuracy: 0.5346666666666666 
+Possible Overfit 
+
+
+2
+
+[0.5 0.5]
+Moons Train Accuracy: 0.8747142857142857 
+Moons Test Accuracy: 0.8703333333333333 
+Possible Overfit 
+
+Rolls Train Accuracy: 0.6004285714285714 
+Rolls Test Accuracy: 0.614 
+
+
+[1.  0.5]
+Moons Train Accuracy: 0.8721428571428571 
+Moons Test Accuracy: 0.883 
+
+Rolls Train Accuracy: 0.6594285714285715 
+Rolls Test Accuracy: 0.6806666666666666 
+
+
+[5.  0.5]
+Moons Train Accuracy: 0.8758571428571429 
+Moons Test Accuracy: 0.8756666666666667 
+Possible Overfit 
+
+Rolls Train Accuracy: 0.6348571428571429 
+Rolls Test Accuracy: 0.6403333333333333 
+
+
+[0.5 1. ]
+Moons Train Accuracy: 0.8775714285714286 
+Moons Test Accuracy: 0.8706666666666667 
+Possible Overfit 
+
+Rolls Train Accuracy: 0.6442857142857142 
+Rolls Test Accuracy: 0.6406666666666667 
+Possible Overfit 
+
+
+[1. 1.]
+Moons Train Accuracy: 0.8731428571428571 
+Moons Test Accuracy: 0.882 
+
+Rolls Train Accuracy: 0.6424285714285715 
+Rolls Test Accuracy: 0.64 
+Possible Overfit 
+
+
+[5. 1.]
+Moons Train Accuracy: 0.8764285714285714 
+Moons Test Accuracy: 0.8773333333333333 
+
+Rolls Train Accuracy: 0.6285714285714286 
+Rolls Test Accuracy: 0.6313333333333333 
+
+
+[0.5 5. ]
+Moons Train Accuracy: 0.879 
+Moons Test Accuracy: 0.8696666666666667 
+Possible Overfit 
+
+Rolls Train Accuracy: 0.6274285714285714 
+Rolls Test Accuracy: 0.634 
+
+
+[1. 5.]
+Moons Train Accuracy: 0.8714285714285714 
+Moons Test Accuracy: 0.885 
+
+Rolls Train Accuracy: 0.6224285714285714 
+Rolls Test Accuracy: 0.6416666666666667 
+
+
+[5. 5.]
+Moons Train Accuracy: 0.8795714285714286 
+Moons Test Accuracy: 0.8686666666666667 
+Possible Overfit 
+
+Rolls Train Accuracy: 0.6222857142857143 
+Rolls Test Accuracy: 0.64 
+
+
+3
+
+[0.5 0.5]
+Moons Train Accuracy: 0.8575714285714285 
+Moons Test Accuracy: 0.8623333333333333 
+
+Rolls Train Accuracy: 0.5308571428571428 
+Rolls Test Accuracy: 0.528 
+Possible Overfit 
+
+
+[1.  0.5]
+Moons Train Accuracy: 0.8597142857142858 
+Moons Test Accuracy: 0.864 
+
+Rolls Train Accuracy: 0.583 
+Rolls Test Accuracy: 0.5656666666666667 
+Possible Overfit 
+
+
+[5.  0.5]
+Moons Train Accuracy: 0.8742857142857143 
+Moons Test Accuracy: 0.8606666666666667 
+Possible Overfit 
+
+Rolls Train Accuracy: 0.6395714285714286 
+Rolls Test Accuracy: 0.6306666666666667 
+Possible Overfit 
+
+
+[0.5 1. ]
+Moons Train Accuracy: 0.8632857142857143 
+Moons Test Accuracy: 0.8803333333333333 
+
+Rolls Train Accuracy: 0.6392857142857142 
+Rolls Test Accuracy: 0.6243333333333333 
+Possible Overfit 
+
+
+[1. 1.]
+Moons Train Accuracy: 0.8695714285714286 
+Moons Test Accuracy: 0.8726666666666667 
+
+Rolls Train Accuracy: 0.6195714285714286 
+Rolls Test Accuracy: 0.6373333333333333 
+
+
+[5. 1.]
+Moons Train Accuracy: 0.8732857142857143 
+Moons Test Accuracy: 0.885 
+
+Rolls Train Accuracy: 0.6287142857142857 
+Rolls Test Accuracy: 0.6156666666666667 
+Possible Overfit 
+
+
+[0.5 5. ]
+Moons Train Accuracy: 0.9157142857142857 
+Moons Test Accuracy: 0.9173333333333333 
+
+Rolls Train Accuracy: 0.6261428571428571 
+Rolls Test Accuracy: 0.612 
+Possible Overfit 
+
+
+[1. 5.]
+Moons Train Accuracy: 0.9267142857142857 
+Moons Test Accuracy: 0.9266666666666666 
+Possible Overfit 
+
+Rolls Train Accuracy: 0.6141428571428571 
+Rolls Test Accuracy: 0.6123333333333333 
+Possible Overfit 
+
+
+[5. 5.]
+Moons Train Accuracy: 0.9388571428571428 
+Moons Test Accuracy: 0.9346666666666666 
+Possible Overfit 
+
+Rolls Train Accuracy: 0.6291428571428571 
+Rolls Test Accuracy: 0.6096666666666667 
+Possible Overfit 
+
+
+5
+
+[0.5 0.5]
+Moons Train Accuracy: 0.8075714285714286 
+Moons Test Accuracy: 0.8173333333333334 
+
+Rolls Train Accuracy: 0.6017142857142858 
+Rolls Test Accuracy: 0.5963333333333334 
+Possible Overfit 
+
+
+[1.  0.5]
+Moons Train Accuracy: 0.8144285714285714 
+Moons Test Accuracy: 0.8143333333333334 
+Possible Overfit 
+
+Rolls Train Accuracy: 0.6092857142857143 
+Rolls Test Accuracy: 0.627 
+
+
+[5.  0.5]
+Moons Train Accuracy: 0.8382857142857143 
+Moons Test Accuracy: 0.839 
+
+Rolls Train Accuracy: 0.6007142857142858 
+Rolls Test Accuracy: 0.61 
+
+
+[0.5 1. ]
+Moons Train Accuracy: 0.847 
+Moons Test Accuracy: 0.8533333333333334 
+
+Rolls Train Accuracy: 0.6078571428571429 
+Rolls Test Accuracy: 0.607 
+Possible Overfit 
+
+
+[1. 1.]
+Moons Train Accuracy: 0.853 
+Moons Test Accuracy: 0.8486666666666667 
+Possible Overfit 
+
+Rolls Train Accuracy: 0.6202857142857143 
+Rolls Test Accuracy: 0.611 
+Possible Overfit 
+
+
+[5. 1.]
+Moons Train Accuracy: 0.8672857142857143 
+Moons Test Accuracy: 0.8636666666666667 
+Possible Overfit 
+
+Rolls Train Accuracy: 0.6878571428571428 
+Rolls Test Accuracy: 0.6903333333333334 
+
+
+[0.5 5. ]
+Moons Train Accuracy: 0.9367142857142857 
+Moons Test Accuracy: 0.929 
+Possible Overfit 
+
+Rolls Train Accuracy: 0.694 
+Rolls Test Accuracy: 0.697 
+
+
+[1. 5.]
+Moons Train Accuracy: 0.9344285714285714 
+Moons Test Accuracy: 0.9363333333333334 
+
+Rolls Train Accuracy: 0.6984285714285714 
+Rolls Test Accuracy: 0.7016666666666667 
+
+
+[5. 5.]
+Moons Train Accuracy: 0.94 
+Moons Test Accuracy: 0.9333333333333333 
+Possible Overfit 
+
+Rolls Train Accuracy: 0.6938571428571428 
+Rolls Test Accuracy: 0.7123333333333334 
+
+
+rbf
+
+[0.5 0.5]
+Moons Train Accuracy: 0.8821428571428571 
+Moons Test Accuracy: 0.878 
+Possible Overfit 
+
+Rolls Train Accuracy: 0.789 
+Rolls Test Accuracy: 0.7883333333333333 
+Possible Overfit 
+
+
+[1.  0.5]
+Moons Train Accuracy: 0.8858571428571429 
+Moons Test Accuracy: 0.879 
+Possible Overfit 
+
+Rolls Train Accuracy: 0.7987142857142857 
+Rolls Test Accuracy: 0.8076666666666666 
+
+
+[5.  0.5]
+Moons Train Accuracy: 0.9022857142857142 
+Moons Test Accuracy: 0.911 
+
+Rolls Train Accuracy: 0.8022857142857143 
+Rolls Test Accuracy: 0.7986666666666666 
+Possible Overfit 
+
+
+[0.5 1. ]
+Moons Train Accuracy: 0.8987142857142857 
+Moons Test Accuracy: 0.9033333333333333 
+
+Rolls Train Accuracy: 0.7921428571428571 
+Rolls Test Accuracy: 0.8036666666666666 
+
+
+[1. 1.]
+Moons Train Accuracy: 0.9127142857142857 
+Moons Test Accuracy: 0.9236666666666666 
+
+Rolls Train Accuracy: 0.7964285714285714 
+Rolls Test Accuracy: 0.794 
+Possible Overfit 
+
+
+[5. 1.]
+Moons Train Accuracy: 0.9584285714285714 
+Moons Test Accuracy: 0.9536666666666667 
+Possible Overfit 
+
+Rolls Train Accuracy: 0.7135714285714285 
+Rolls Test Accuracy: 0.7106666666666667 
+Possible Overfit 
+
+
+[0.5 5. ]
+Moons Train Accuracy: 0.9852857142857143 
+Moons Test Accuracy: 0.987 
+
+Rolls Train Accuracy: 0.8208571428571428 
+Rolls Test Accuracy: 0.813 
+Possible Overfit 
+
+
+[1. 5.]
+Moons Train Accuracy: 0.9891428571428571 
+Moons Test Accuracy: 0.9896666666666667 
+
+Rolls Train Accuracy: 0.8214285714285714 
+Rolls Test Accuracy: 0.821 
+Possible Overfit 
+
+
+[5. 5.]
+Moons Train Accuracy: 0.9901428571428571 
+Moons Test Accuracy: 0.9906666666666667 
+
+Rolls Train Accuracy: 0.8307142857142857 
+Rolls Test Accuracy: 0.8103333333333333 
+Possible Overfit 
+
+

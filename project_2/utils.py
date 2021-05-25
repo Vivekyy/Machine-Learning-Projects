@@ -1,5 +1,5 @@
 import numpy as np
-from sklearn import preprocessing
+from sklearn import decomposition
 import scipy.io as sio
 
 def getData(fileName):
@@ -18,7 +18,7 @@ def getData(fileName):
 
     return X1,X2,Y
 
-def getDigits():
+def getDigits(n):
     data = sio.loadmat('digits.mat')
     X = data['X']
     Y = data['Y']
@@ -27,5 +27,9 @@ def getDigits():
     shuffler = np.random.permutation(len(X))
     X = X[shuffler]
     Y = Y[shuffler]
+
+    #reduce dim to n
+    pca = decomposition.PCA(n_components=n)
+    X = pca.fit_transform(X)
 
     return X,Y
