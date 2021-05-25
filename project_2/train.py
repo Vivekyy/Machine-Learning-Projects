@@ -27,6 +27,7 @@ def train(dataset, C=1.0, gamma='scale', kernel='rbf', plotpath='Temp'):
     model.fit(Xtrain,Ytrain)
 
     accuracy = model.score(Xtest,Ytest)
+    trainacc = model.score(Xtrain,Ytrain)
 
     #Plot decision boundary
     Xbound = np.mgrid[0:1:.01, 0:1:.01].reshape(2,-1).T
@@ -39,7 +40,7 @@ def train(dataset, C=1.0, gamma='scale', kernel='rbf', plotpath='Temp'):
 
     plt.savefig(plotpath+'.png')
     
-    return accuracy
+    return accuracy, trainacc
 
 def train2(C=1.0, gamma='scale', kernel='rbf', scheme='ovo'):
 
@@ -60,9 +61,9 @@ def train2(C=1.0, gamma='scale', kernel='rbf', scheme='ovo'):
     model.fit(Xtrain,Ytrain.ravel())
 
     accuracy = model.score(Xtest,Ytest)
-    
+
     return accuracy
 
 if __name__=="__main__":
-    accuracy = train2(C=.4, kernel='linear')
+    accuracy = train(C=.4, kernel='linear')
     print("Test Accuracy: ", accuracy)
