@@ -99,7 +99,7 @@ class Linear(Module):
         #self.W += -self.learning_rate*gradW
         #self.b += -self.learning_rate*gradient
 
-        self.W,self.b = self.Adam(self.W,self.b,gradW,gradient)
+        self.W,self.b = self.Adam(self.W, self.b, gradW, gradient)
 
         #Can automate by calling prev backwards
 
@@ -145,18 +145,18 @@ class Network(Module):
     def __init__(self, input_dim, output_dim):
         super(Network, self).__init__()
         # todo initializes layers, i.e. sigmoid, linear
-        self.lin1 = Linear(input_dim, 10, is_input=True)
+        self.lin1 = Linear(input_dim, 5, is_input=True)
         
         self.sig1 = Sigmoid()
         self.sig1(self.lin1)
 
-        self.lin2 = Linear(10,10)
+        self.lin2 = Linear(5,5)
         self.lin2(self.sig1)
 
         self.sig2 = Sigmoid()
         self.sig2(self.lin2)
 
-        self.lin3 = Linear(10,output_dim)
+        self.lin3 = Linear(5,output_dim)
         self.lin3(self.sig2)
 
         self.sig3 = Sigmoid()
@@ -235,14 +235,14 @@ def train(model, data, labels, num_iterations, batch_size, learning_rate=None):
 
 class Adam():
     def __init__(self,W):
-        self.learning_rate = 1E-2
-        self.epsilon = 1e-8
+        self.learning_rate = 1E-3
+        self.epsilon = 1E-8
 
         self.m = np.zeros_like(W)
         self.v = np.zeros_like(W)
 
-        self.mb = np.zeros_like(W[0])
-        self.vb = np.zeros_like(W[0])
+        self.mb = np.zeros_like(W[0]).T
+        self.vb = np.zeros_like(W[0]).T
 
     def __call__(self,W,b,dW,db):
         beta1 = .9
