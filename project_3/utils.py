@@ -2,10 +2,10 @@ import scipy.io as sio
 import numpy as np
 from sklearn import preprocessing
 
-def getData():
+def getData(in):
     data = sio.loadmat('nn_data.mat')
-    X = data['X']
-    Y = data['Y']
+    X = data['X'+str(in)]
+    Y = data['Y'+str(in)]
 
     #normalize X data
     X = preprocessing.normalize(X, norm='max', axis=1)

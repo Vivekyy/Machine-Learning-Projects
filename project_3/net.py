@@ -74,6 +74,7 @@ class Linear(Module):
         super(Linear, self).__init__()
         self.W = np.random.rand(input_size,output_size)
         self.b = np.random.rand(output_size)
+        self.Adam = Adam(self.W)
 
         self.is_input = is_input
 
@@ -94,8 +95,11 @@ class Linear(Module):
 
         gradBack = np.matmul(self.W,gradient)
 
-        self.W += -self.learning_rate*gradW
-        self.b += -self.learning_rate*gradient
+        #For non-Adam gradient descent
+        #self.W += -self.learning_rate*gradW
+        #self.b += -self.learning_rate*gradient
+
+        self.W,self.b = self.Adam(self.W,self.b,gradW,gradient)
 
         #Can automate by calling prev backwards
 
@@ -228,3 +232,30 @@ def train(model, data, labels, num_iterations, batch_size, learning_rate=None):
             print()
 
     return model
+
+class Adam():
+    def __init__(self,W):
+        self.learning_rate = 1E-2
+        self.epsilon = 1e-8
+
+        self.m = np.zeros_like(W)
+        self.v = np.zeros_like(W)
+
+        self.mb = np.zeros_like(W[0])
+        self.vb = np.zeros_like(W[0])
+
+    def __call__(self,W,b,dW,db):
+        beta1 = .9
+        beta2 = .999
+
+        self.m = beta1*self.m + (1-beta1)*dW
+        self.v = beta2*self.v + (1-beta2)*(dW**2)
+        W += - self.learning_rate * self.m / (np.sqrt(self.v) + self.epsilon)
+
+        self.mb = beta1*self.mb + (1-beta1)*db
+        self.vb = beta2*self.vb + (1-beta2)*(db**2)
+        b += - self.learning_rate * self.mb / (np.sqrt(self.vb) + self.epsilon)
+
+        return W,b
+
+        
