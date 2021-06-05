@@ -9,6 +9,7 @@
 # backpropogation.
 
 import numpy as np
+from sklearn.utils import shuffle
 
 class Module():
     def __init__(self):
@@ -76,7 +77,7 @@ class Linear(Module):
         self.b = np.random.rand(output_size)
         self.Adam = Adam(self.W)
 
-        self.is_input = is_input
+        self.is_input = is_input #Currently unused
 
     def forward(self, input):  # input has shape (batch_size, input_size)
         # todo compute forward pass through linear input
@@ -98,8 +99,10 @@ class Linear(Module):
         #For non-Adam gradient descent
         #self.W += -self.learning_rate*gradW
         #self.b += -self.learning_rate*gradient
+        gradW = np.average(gradW,axis=0)
+        gradb = np.average(gradient,axis=0)
 
-        self.W,self.b = self.Adam(self.W, self.b, gradW, gradient)
+        self.W,self.b = self.Adam(self.W, self.b, gradW, gradb)
 
         #Can automate by calling prev backwards
 
@@ -162,22 +165,45 @@ class Network(Module):
         self.sig3 = Sigmoid()
         self.sig3(self.lin3)
 
+        """
+
+        self.lin4 = Linear(20,output_dim)
+        self.lin4(self.sig3)
+
+        self.sig4 = Sigmoid()
+        self.sig4(self.lin4)
+        """
+
     def forward(self, input):
         # todo compute forward pass through all initialized layers
         F = self.lin1.forward(input)
         F = self.sig1.forward(F)
+
         F = self.lin2.forward(F)
         F = self.sig2.forward(F)
+
         F = self.lin3.forward(F)
         F = self.sig3.forward(F)
+        """
+        F = self.lin4.forward(F)
+        F = self.sig4.forward(F)
+        """
+
         return F
 
     def backwards(self, grad):
         # todo iterate through layers and compute and store gradients
+        """
+        G = self.sig4.backwards(grad)
+        G = self.lin4.backwards(G)
+        """
+
         G = self.sig3.backwards(grad)
         G = self.lin3.backwards(G)
+
         G = self.sig2.backwards(G)
         G = self.lin2.backwards(G)
+
         G = self.sig1.backwards(G)
         G = self.lin1.backwards(G)
         return G
@@ -202,28 +228,31 @@ def train(model, data, labels, num_iterations, batch_size, learning_rate=None):
     # todo repeatedly do forward and backwards calls, update weights, do 
     # stochastic gradient descent on mini-batches.
 
-    ## Haven't figured out changing the learning rate yet
-
     num_batches = int(len(data)/batch_size)
     if (len(data) % batch_size != 0):
         num_batches += 1
     
     loss = MeanErrorLoss()
 
+    losses = np.zeros((num_iterations))
     for j in range(num_iterations):
         L = 0
         error = 0
+        data,labels = shuffle(data,labels)
+
         for i in range(num_batches):
             start = i*batch_size
             stop = (i+1)*batch_size
+
             preds = model.forward(data[start:stop])
             L += loss.forward(preds,labels[start:stop])
             model.backwards(loss.backwards())
 
             error += (np.average(preds-labels[start:stop]))**2
         
-        error = error
-        L = L
+        error = error/num_batches
+        L = np.average(L)/num_batches
+        losses[j] = L
         
         if (j % 100 == 0):
             print("Iteration ", j)
@@ -231,18 +260,19 @@ def train(model, data, labels, num_iterations, batch_size, learning_rate=None):
             print("Error: ", error)
             print()
 
-    return model
+    return model, losses
 
+#Helps a lot somehow
 class Adam():
     def __init__(self,W):
-        self.learning_rate = 1E-3
+        self.learning_rate = 1E-3 #Use 1E-2 for sin
         self.epsilon = 1E-8
 
         self.m = np.zeros_like(W)
         self.v = np.zeros_like(W)
 
-        self.mb = np.zeros_like(W[0]).T
-        self.vb = np.zeros_like(W[0]).T
+        self.mb = np.zeros_like(W[0])
+        self.vb = np.zeros_like(W[0])
 
     def __call__(self,W,b,dW,db):
         beta1 = .9
