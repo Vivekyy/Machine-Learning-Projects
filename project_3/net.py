@@ -153,26 +153,24 @@ class Network(Module):
         self.sig1 = Sigmoid()
         self.sig1(self.lin1)
 
-        self.lin2 = Linear(5,5)
+        self.lin2 = Linear(5,10)
         self.lin2(self.sig1)
 
         self.sig2 = Sigmoid()
         self.sig2(self.lin2)
 
-        self.lin3 = Linear(5,output_dim)
+        self.lin3 = Linear(10,5)
         self.lin3(self.sig2)
 
         self.sig3 = Sigmoid()
         self.sig3(self.lin3)
 
-        """
 
-        self.lin4 = Linear(20,output_dim)
+        self.lin4 = Linear(5,output_dim)
         self.lin4(self.sig3)
 
         self.sig4 = Sigmoid()
         self.sig4(self.lin4)
-        """
 
     def forward(self, input):
         # todo compute forward pass through all initialized layers
@@ -184,21 +182,19 @@ class Network(Module):
 
         F = self.lin3.forward(F)
         F = self.sig3.forward(F)
-        """
+        
         F = self.lin4.forward(F)
         F = self.sig4.forward(F)
-        """
 
         return F
 
     def backwards(self, grad):
         # todo iterate through layers and compute and store gradients
-        """
+
         G = self.sig4.backwards(grad)
         G = self.lin4.backwards(G)
-        """
 
-        G = self.sig3.backwards(grad)
+        G = self.sig3.backwards(G)
         G = self.lin3.backwards(G)
 
         G = self.sig2.backwards(G)
@@ -265,7 +261,7 @@ def train(model, data, labels, num_iterations, batch_size, learning_rate=None):
 #Helps a lot somehow
 class Adam():
     def __init__(self,W):
-        self.learning_rate = 1E-3 #Use 1E-2 for sin
+        self.learning_rate = 1E-2 #Use 1E-2 for sin
         self.epsilon = 1E-8
 
         self.m = np.zeros_like(W)
